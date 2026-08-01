@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart | Online Fruits & Vegetables Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <h1>FreshMart</h1>
+
+            </div>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#products">Products</a></li>
+
+                <li><a href="#billing">Billing</a></li>
+
+            </ul>
+
+            <div class="cart-icon">
+
+                🛒 Cart
+                <span id="cartCount">0</span>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Fresh Fruits & Vegetables Delivered Daily</h2>
+
+            <p>Healthy • Fresh • Affordable</p>
+
+            <input type="text"
+                id="searchBar"
+                placeholder="Search Fruits & Vegetables..."
+                onkeyup="searchProduct()">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section id="products">
+
+        <h2 class="section-title">Shop Fresh Products</h2>
+
+        <div class="product-grid">
+
+            <!-- APPLE -->
+
+            <div class="product-card">
+
+                <img src="images/apple.png">
+
+                <h3>Apple</h3>
+
+                <p class="price">₹180 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+            
+                <input type="number" id="appleQty" placeholder="Enter Kg" min="1">
+
+
+                <button onclick="addToCart('Apple',180,'appleQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- BANANA -->
+
+            <div class="product-card">
+
+                <img src="images/banana.png">
+
+                <h3>Banana</h3>
+
+                <p class="price">₹70 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                <input type="number" id="bananaQty" placeholder="Enter Kg" min="1">
+
+
+                <button onclick="addToCart('Banana',70,'bananaQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- MANGO -->
+
+            <div class="product-card">
+
+                <img src="images/mango.png">
+
+                <h3>Mango</h3>
+
+                <p class="price">₹150 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                
+                <input type="number" id="mangoQty" placeholder="Enter Kg" min="1">
+
+                <button onclick="addToCart('Mango',150,'mangoQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- ORANGE -->
+
+            <div class="product-card">
+
+                <img src="images/orange.png">
+
+                <h3>Orange</h3>
+
+                <p class="price">₹120 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                
+                <input type="number" id="orangeQty" placeholder="Enter Kg" min="1">
+
+                <button onclick="addToCart('Orange',120,'orangeQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- POTATO -->
+
+            <div class="product-card">
+
+                <img src="images/potatoes.png">
+
+                <h3>Potato</h3>
+
+                <p class="price">₹40 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                
+                <input type="number" id="potatoQty" placeholder="Enter Kg" min="1">
+
+                <button onclick="addToCart('Potato',40,'potatoQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- TOMATO -->
+
+            <div class="product-card">
+
+                <img src="images/tomato.png">
+
+                <h3>Tomato</h3>
+
+                <p class="price">₹50 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                
+                <input type="number" id="tomatoQty" placeholder="Enter Kg" min="1">
+
+                <button onclick="addToCart('Tomato',50,'tomatoQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- ONION -->
+
+            <div class="product-card">
+
+                <img src="images/onion.png">
+
+                <h3>Onion</h3>
+
+                <p class="price">₹35 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                
+                <input type="number" id="onionQty" placeholder="Enter Kg" min="1">
+
+                <button onclick="addToCart('Onion',35,'onionQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- CARROT -->
+
+            <div class="product-card">
+
+                <img src="images/carrot.png">
+
+                <h3>Carrot</h3>
+
+                <p class="price">₹60 / Kg</p>
+
+                <label>Quantity (Kg)</label>
+
+                
+                <input type="number" id="carrotQty" placeholder="Enter Kg" min="1">
+
+                <button onclick="addToCart('Carrot',60,'carrotQty')">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART ================= -->
+
+    <section class="cart-section">
+
+        <h2>Your Shopping Cart</h2>
+
+        <div id="cartItems">
+
+            <p>Your cart is empty.</p>
+
+        </div>
+
+        <h3>
+
+            Total :
+            ₹<span id="cartTotal">0</span>
+
+        </h3>
+
+        <button id="billingBtn" onclick="showBilling()">
+
+            Proceed To Billing
+
+        </button>
+
+    </section>
+
+
+    <!-- ================= BILLING ================= -->
+
+    <section id="billing" class="billing-section">
+
+        <h2>Customer Billing Details</h2>
+
+        <form id="billingForm">
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Customer Name"
+                required>
+
+            <input
+                type="tel"
+                id="mobile"
+                placeholder="Mobile Number"
+                maxlength="10"
+                required>
+
+            <label>Payment Mode</label>
+
+            <select id="paymentMode">
+
+                <option>Cash</option>
+
+                <option>Card</option>
+
+                <option>UPI</option>
+
+            </select>
+
+            <label>Membership</label>
+
+            <select id="membership">
+
+                <option>No</option>
+
+                <option>Yes</option>
+
+            </select>
+
+            <label>Discount (%)</label>
+
+            <input
+                type="number"
+                id="discount"
+                value="10">
+
+            <label>GST (%)</label>
+
+            <input
+                type="number"
+                id="gst"
+                value="5">
+
+            <label>Packing Charges (₹)</label>
+
+            <input
+                type="number"
+                id="packing"
+                value="20">
+
+            <button
+                type="button"
+                onclick="generateInvoice()">
+
+                Generate Invoice
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= INVOICE ================= -->
+
+    <section class="invoice-section">
+
+        <h2>Invoice</h2>
+
+        <div id="invoice"></div>
+
+<div style="text-align:center; margin-top:20px;">
+
+    <button
+        id="printBtn"
+        onclick="printInvoice()"
+        style="display:none;">
+
+        Print Invoice
+
+    </button>
+
+</div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 FreshMart |
+            Developed using HTML, CSS & JavaScript
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
