@@ -1,0 +1,309 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#eef4ff;
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+    background:#0d47a1;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+
+}
+
+header h1{
+
+    font-size:38px;
+
+    margin-bottom:8px;
+
+}
+
+header p{
+
+    font-size:18px;
+
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.container{
+
+    width:90%;
+
+    margin:40px auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+    flex:1;
+
+    min-width:320px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
+}
+
+.card h2{
+
+    color:#0d47a1;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+/* ================= INPUTS ================= */
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:5px;
+
+    font-weight:600;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border:2px solid #0d47a1;
+
+}
+
+/* ================= BUTTONS ================= */
+
+.button-box{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+button{
+
+    background:#0d47a1;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 35px;
+
+    margin:10px;
+
+    border-radius:8px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    background:#1565c0;
+
+    transform:scale(1.05);
+
+}
+
+/* ================= RESULT ================= */
+
+#resultSection{
+
+    width:90%;
+
+    margin:30px auto 60px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
+    display:none;
+
+}
+
+#resultSection h2{
+
+    text-align:center;
+
+    color:#0d47a1;
+
+    margin-bottom:25px;
+
+}
+
+/* ================= TABLE ================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+table th{
+
+    background:#0d47a1;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+table td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border:1px solid #ddd;
+
+}
+
+table tr:nth-child(even){
+
+    background:#f5f8ff;
+
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+
+    margin-top:30px;
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+.summary span{
+
+    font-weight:bold;
+
+    color:#0d47a1;
+
+}
+
+/* ================= PASS / FAIL ================= */
+
+.pass{
+
+    color:green;
+
+    font-weight:bold;
+
+}
+
+.fail{
+
+    color:red;
+
+    font-weight:bold;
+
+}
+
+.grade{
+
+    color:#ff9800;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.container{
+
+    flex-direction:column;
+
+}
+
+.card{
+
+    width:100%;
+
+}
+
+button{
+
+    width:90%;
+
+}
+
+}
