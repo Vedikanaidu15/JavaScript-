@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Checker</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        try {
+            let num = 7; // Change this number to test
+            if (typeof num !== "number") throw new Error("Not a number");
+            if (num < 2) throw new Error("Not prime (must be >= 2)");
+
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) { isPrime = false; break; }
+            }
+
+            document.getElementById("result").innerHTML = 
+                num + (isPrime ? " is a prime number." : " is not a prime number.");
+        } 
+        catch (error) {
+            document.getElementById("result").innerHTML = "Error: " + error.message;
+        }
+    </script>
+</body>
+</html>

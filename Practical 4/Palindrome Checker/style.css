@@ -1,0 +1,323 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef1f6;
+    color: #1f2937;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background-color: #263859;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.practical-tag {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #cbd5e1;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.header p {
+    margin: 12px 0 0 0;
+    font-size: 16px;
+    color: #dce3ee;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+
+/* =========================
+   INPUT CARD
+========================= */
+
+.input-card {
+    background-color: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.number {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: #263859;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.section-title h2,
+.logic-title h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #1f2937;
+}
+
+.section-title p,
+.logic-title p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    color: #737b87;
+}
+
+.input-area {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.input-area input {
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #cfd5df;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #1f2937;
+    outline: none;
+}
+
+.input-area input:focus {
+    border-color: #263859;
+}
+
+.input-area button {
+    width: 170px;
+    border: none;
+    border-radius: 8px;
+    background-color: #263859;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #1d2b45;
+}
+
+
+/* =========================
+   RESULT SECTION
+========================= */
+
+.result-section {
+    margin-top: 25px;
+}
+
+.section-heading {
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #1f2937;
+}
+
+.section-heading p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    color: #737b87;
+}
+
+
+/* Result Cards */
+
+.result-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.result-card {
+    background-color: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    min-height: 105px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.card-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #737b87;
+}
+
+.card-value {
+    margin-top: 15px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #263859;
+}
+
+.status-card .card-value {
+    font-size: 20px;
+}
+
+
+/* Result Message */
+
+.result-message {
+    margin-top: 16px;
+    padding: 18px 22px;
+    background-color: white;
+    border-left: 4px solid #263859;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #303946;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.logic-section {
+    margin-top: 25px;
+    background-color: white;
+    border: 1px solid #e1e5eb;
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.logic-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.step {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background-color: #f7f8fa;
+    border-radius: 9px;
+}
+
+.step > span {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #263859;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.step strong {
+    font-size: 14px;
+}
+
+.step p {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #737b87;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #737b87;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 750px) {
+
+    .dashboard {
+        width: 92%;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    .input-area button {
+        width: 100%;
+        height: 48px;
+    }
+
+    .result-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+}
+
+

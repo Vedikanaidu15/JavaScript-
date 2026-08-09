@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Function Example</title>
+</head>
+<body>
+
+<h2>Addition Using JavaScript Function</h2>
+
+<input type="number" id="a" placeholder="First Number">
+<input type="number" id="b" placeholder="Second Number">
+
+<button onclick="show()">Add</button>
+
+<script>
+
+function add(a,b){
+    return a+b;
+}
+
+function show(){
+
+    let x = Number(document.getElementById("a").value);
+    let y = Number(document.getElementById("b").value);
+
+    alert("The Sum is : " + add(x,y));
+
+}
+
+</script>
+
+</body>
+</html>

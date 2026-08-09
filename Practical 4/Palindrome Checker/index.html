@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Palindrome Checker | JavaScript Practical 4</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+        <header class="header">
+             <div class="student-info">
+                    <span>NAME: VEDIKA NAIDU</span>
+                    <span>PRN: 24070521274</span>
+                </div>
+            <div class="header-content">
+                
+
+                <h1>Palindrome Checker</h1>
+
+                <p>
+                    Reverse a given number and determine whether it is a palindrome
+                </p>
+            </div>
+        </header>
+
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+
+            <!-- Input Section -->
+            <section class="input-card">
+
+                <div class="section-title">
+                    <span class="number">01</span>
+
+                    <div>
+                        <h2>Enter Number</h2>
+                        <p>Enter an integer to perform the palindrome check</p>
+                    </div>
+                </div>
+
+                <div class="input-area">
+
+                    <input
+                        type="number"
+                        id="number"
+                        placeholder="e.g. 121"
+                    >
+
+                    <button onclick="checkPalindrome()">
+                        Check Number
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Result Section -->
+            <section class="result-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Analysis Result</h2>
+                        <p>Comparison between the original and reversed number</p>
+                    </div>
+                </div>
+
+
+                <div class="result-cards">
+
+                    <!-- Original Number -->
+                    <div class="result-card">
+
+                        <div class="card-label">
+                            ORIGINAL NUMBER
+                        </div>
+
+                        <div class="card-value" id="original">
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <!-- Reversed Number -->
+                    <div class="result-card">
+
+                        <div class="card-label">
+                            REVERSED NUMBER
+                        </div>
+
+                        <div class="card-value" id="reversed">
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="result-card status-card">
+
+                        <div class="card-label">
+                            PALINDROME STATUS
+                        </div>
+
+                        <div class="card-value" id="status">
+                            —
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Main Message -->
+                <div class="result-message" id="result">
+                    Enter a number above and click "Check Number".
+                </div>
+
+            </section>
+
+
+            <!-- How It Works -->
+            <section class="logic-section">
+
+                <div class="logic-title">
+                    <span class="number">02</span>
+
+                    <div>
+                        <h2>How It Works</h2>
+                        <p>The logic used in this practical</p>
+                    </div>
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step">
+                        <span>1</span>
+                        <div>
+                            <strong>Input</strong>
+                            <p>A number is entered by the user.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span>2</span>
+                        <div>
+                            <strong>Reverse</strong>
+                            <p>The <b>reverseNumber()</b> function reverses the number.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span>3</span>
+                        <div>
+                            <strong>Compare</strong>
+                            <p>The original and reversed numbers are compared.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            JavaScript Practical 4 &nbsp;|&nbsp; Function & Palindrome Check
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

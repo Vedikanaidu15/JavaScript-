@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study vs Instagram Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- STUDENT DETAILS -->
+
+    <div class="student-bar">
+
+        <span>PRN: 24070521274</span>
+
+        <span>NAME: VEDIKA NAIDU</span>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        
+
+        <h1>Study <span>vs</span> Instagram</h1>
+
+        <p class="description">
+            Analyze your daily screen time and study habits
+        </p>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <section class="calculator-container">
+
+
+            <!-- STUDY CARD -->
+
+            <div class="card study-card">
+
+                <div class="card-number">01</div>
+
+                <h2>Study Time</h2>
+
+                <p>
+                    Enter the number of hours you study every day.
+                </p>
+
+                <label for="study">
+                    Daily Study Hours
+                </label>
+
+                <input
+                    type="number"
+                    id="study"
+                    placeholder="Example: 5"
+                    min="0">
+
+            </div>
+
+
+            <!-- INSTAGRAM CARD -->
+
+            <div class="card instagram-card">
+
+                <div class="card-number">02</div>
+
+                <h2>Instagram Time</h2>
+
+                <p>
+                    Enter the number of hours you spend on Instagram.
+                </p>
+
+                <label for="instagram">
+                    Daily Instagram Hours
+                </label>
+
+                <input
+                    type="number"
+                    id="instagram"
+                    placeholder="Example: 2"
+                    min="0">
+
+            </div>
+
+        </section>
+
+
+        <!-- CALCULATE BUTTON -->
+
+        <button class="calculate-button" onclick="calculate()">
+
+            Calculate My Time
+
+        </button>
+
+
+        <!-- RESULT -->
+
+        <section class="result-box" id="result">
+
+            <h2>Your Result</h2>
+
+            <p>
+                Enter both values and click
+                <strong>Calculate My Time</strong>.
+            </p>
+
+        </section>
+
+
+        <!-- REDIRECT -->
+
+        <section class="redirect-box">
+
+            <h3>Want to visit Instagram?</h3>
+
+            <p>
+                Open Instagram directly from this webpage.
+            </p>
+
+            <button
+                class="instagram-button"
+                onclick="openInstagram()">
+
+                Open Instagram
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        Study vs Instagram Calculator |
+        JavaScript Try & Catch Demonstration
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
