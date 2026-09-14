@@ -1,0 +1,466 @@
+/* =========================
+        BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+
+    color: #1e293b;
+
+}
+
+
+/* =========================
+        STUDENT BAR
+========================= */
+
+.student-bar {
+
+    width: 90%;
+
+    max-width: 950px;
+
+    margin: 20px auto;
+
+    padding: 12px 20px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #4338ca;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* =========================
+        HEADER
+========================= */
+
+header {
+
+    width: 90%;
+
+    max-width: 950px;
+
+    margin: 0 auto 30px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4338ca,
+            #6366f1
+        );
+
+    box-shadow:
+        0 12px 30px rgba(67, 56, 202, 0.25);
+
+}
+
+
+.subtitle {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+
+header h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+}
+
+
+header p:last-child {
+
+    font-size: 16px;
+
+    opacity: 0.9;
+
+}
+
+
+/* =========================
+        MAIN
+========================= */
+
+main {
+
+    width: 90%;
+
+    max-width: 950px;
+
+    margin: auto;
+
+}
+
+
+/* =========================
+        INPUT SECTION
+========================= */
+
+.input-section {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.input-section h2 {
+
+    color: #4338ca;
+
+    margin-bottom: 8px;
+
+}
+
+
+.input-section p {
+
+    color: #64748b;
+
+    margin-bottom: 20px;
+
+}
+
+
+.input-section input {
+
+    width: 70%;
+
+    padding: 14px;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.input-section input:focus {
+
+    border-color: #6366f1;
+
+}
+
+
+.input-section button {
+
+    margin-left: 10px;
+
+    padding: 14px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4338ca;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.input-section button:hover {
+
+    background: #312e81;
+
+}
+
+
+/* =========================
+        ARRAY SECTION
+========================= */
+
+.array-section {
+
+    background: white;
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.array-section h2 {
+
+    color: #475569;
+
+    margin-bottom: 15px;
+
+}
+
+
+#arrayDisplay {
+
+    padding: 15px;
+
+    background: #f1f5f9;
+
+    border-radius: 10px;
+
+    color: #4338ca;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+        RESULT SECTION
+========================= */
+
+.result-section {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+}
+
+
+.result-section h2 {
+
+    color: #4338ca;
+
+    margin-bottom: 20px;
+
+}
+
+
+.result-container {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.result-card {
+
+    flex: 1;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.result-card p {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.result-card h3 {
+
+    font-size: 48px;
+
+    margin: 10px 0;
+
+}
+
+
+.result-card span {
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+.maximum h3 {
+
+    color: #16a34a;
+
+}
+
+
+.minimum h3 {
+
+    color: #dc2626;
+
+}
+
+
+/* =========================
+        RESET BUTTON
+========================= */
+
+.reset-button {
+
+    display: block;
+
+    margin: 25px auto;
+
+    padding: 11px 30px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #64748b;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.reset-button:hover {
+
+    background: #475569;
+
+}
+
+
+/* =========================
+        FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    margin: 30px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+        MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .student-bar {
+
+        flex-direction: column;
+
+        gap: 6px;
+
+        text-align: center;
+
+    }
+
+
+    .input-section input {
+
+        width: 100%;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .input-section button {
+
+        margin-left: 0;
+
+    }
+
+
+    .result-container {
+
+        flex-direction: column;
+
+    }
+
+
+    header h1 {
+
+        font-size: 32px;
+
+    }
+
+}

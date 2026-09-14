@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Array Analyzer | JavaScript</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- STUDENT DETAILS -->
+
+    <div class="student-bar">
+
+        <span>PRN: 24070521274</span>
+
+        <span>NAME: VEDIKA NAIDU</span>
+
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <p class="subtitle">JAVASCRIPT ARRAY CASE STUDY</p>
+
+        <h1>Array Analyzer</h1>
+
+        <p>
+            Find the Maximum and Minimum Values
+        </p>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <!-- INPUT SECTION -->
+
+        <section class="input-section">
+
+            <h2>Enter Numerical Values</h2>
+
+            <p>
+                Enter numbers separated by commas
+            </p>
+
+            <input
+                type="text"
+                id="numbers"
+                placeholder="Example: 12, 45, 2, 89, 34">
+
+            <button onclick="analyzeArray()">
+                Analyze Array
+            </button>
+
+        </section>
+
+
+        <!-- ARRAY DISPLAY -->
+
+        <section class="array-section">
+
+            <h2>Input Array</h2>
+
+            <div id="arrayDisplay">
+                [ 12, 45, 2, 89, 34 ]
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section class="result-section">
+
+            <h2>Analysis Result</h2>
+
+            <div class="result-container">
+
+                <div class="result-card maximum">
+
+                    <p>MAXIMUM VALUE</p>
+
+                    <h3 id="maximum">89</h3>
+
+                    <span>Highest Number</span>
+
+                </div>
+
+
+                <div class="result-card minimum">
+
+                    <p>MINIMUM VALUE</p>
+
+                    <h3 id="minimum">2</h3>
+
+                    <span>Lowest Number</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESET -->
+
+        <button class="reset-button" onclick="resetArray()">
+            Reset
+        </button>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        JavaScript Arrays & Loops | Maximum and Minimum Value
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
