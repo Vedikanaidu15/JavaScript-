@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Email & Text Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Student Details -->
+    <div class="student-details">
+        <span>NAME: VEDIKA NAIDU</span>
+        <span>PRN: 24070521274</span>
+    </div>
+
+
+    <!-- Header -->
+    <header>
+
+        <div class="tag">JAVASCRIPT PRACTICAL 6</div>
+
+        <h1>Email & Text Analyzer</h1>
+
+        <p>
+            String Functions • Regular Expressions • Text Analysis
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Email Validation Section -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <div class="icon">✉</div>
+
+                <div>
+                    <h2>Email Validation</h2>
+                    <p>Check whether an email address is valid using Regular Expression.</p>
+                </div>
+            </div>
+
+
+            <div class="input-area">
+
+                <label for="emailInput">Email Address</label>
+
+                <div class="input-row">
+
+                    <input
+                        type="text"
+                        id="emailInput"
+                        placeholder="example@gmail.com"
+                    >
+
+                    <button onclick="validateEmail()">
+                        Validate Email
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="emailResult" class="email-result">
+                Enter an email address to validate.
+            </div>
+
+        </section>
+
+
+
+        <!-- Text Analyzer Section -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div class="icon">Aa</div>
+
+                <div>
+                    <h2>Text Analyzer</h2>
+
+                    <p>
+                        Analyze text and extract useful information using string functions and Regex.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <label for="textInput">Enter Your Text</label>
+
+            <textarea
+                id="textInput"
+                placeholder="Example: Hello, my email is vedika@gmail.com. I am studying JavaScript in 2026."
+            ></textarea>
+
+
+            <div class="button-row">
+
+                <button onclick="analyzeText()">
+                    Analyze Text
+                </button>
+
+                <button class="clear-btn" onclick="clearAll()">
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Results -->
+
+        <section class="results-section">
+
+            <div class="results-heading">
+
+                <div>
+                    <h2>Analysis Dashboard</h2>
+
+                    <p>
+                        Results generated from the entered text
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="result-grid">
+
+
+                <div class="result-box">
+
+                    <div class="result-icon">Aa</div>
+
+                    <div>
+                        <p>Characters</p>
+                        <h3 id="characterCount">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <div class="result-icon">W</div>
+
+                    <div>
+                        <p>Words</p>
+                        <h3 id="wordCount">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <div class="result-icon">#</div>
+
+                    <div>
+                        <p>Numbers</p>
+                        <h3 id="numberCount">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <div class="result-icon">@</div>
+
+                    <div>
+                        <p>Emails</p>
+                        <h3 id="emailCount">0</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Extracted Data -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <div class="icon">⌕</div>
+
+                <div>
+                    <h2>Extracted Data</h2>
+
+                    <p>
+                        Information identified using Regular Expressions.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="extractedData" class="extracted-data">
+
+                <span class="empty-text">
+                    No data extracted yet.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            JavaScript Practical 6
+            <span>•</span>
+            Email & Text Analyzer
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
