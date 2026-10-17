@@ -1,0 +1,89 @@
+<!--
+  NAME: VEDIKA NAIDU
+  PRN : 24070521274
+  Experiment: Dynamic Countdown / Class Scheduler (setTimeout, setInterval, ES6)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Scheduler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Class Scheduler</h1>
+      <p>Live timetable and countdowns</p>
+    </div>
+    <div class="topbar-right">
+      <div class="student">
+        <strong id="student-name">VEDIKA NAIDU</strong>
+        <span>PRN <span id="student-prn">24070521274</span></span>
+      </div>
+      <div class="clock">
+        <strong id="clock">00:00:00</strong>
+        <span id="date"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <section class="hero" id="hero" data-mode="idle" aria-label="Current or next class">
+      <div class="hero-text">
+        <p class="hero-label" id="hero-label">Loading</p>
+        <h2 id="hero-title">–</h2>
+        <p class="hero-meta" id="hero-meta"></p>
+        <p class="hero-after" id="hero-after"></p>
+      </div>
+      <div class="ring" role="timer">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+          <circle class="ring-fg" id="ring-fg" cx="60" cy="60" r="54"></circle>
+        </svg>
+        <div class="ring-center">
+          <strong id="cd-main">00:00:00</strong>
+          <span id="cd-sub"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Today at a glance">
+      <div class="stat"><span>Classes today</span><strong id="stat-total">0</strong></div>
+      <div class="stat"><span>Completed</span><strong id="stat-done">0</strong></div>
+      <div class="stat"><span>Remaining</span><strong id="stat-left">0</strong></div>
+      <div class="stat"><span>Day</span><strong id="stat-day">–</strong></div>
+    </section>
+
+    <section class="panel timetable" aria-label="Weekly timetable">
+      <div class="panel-head">
+        <h3>Timetable</h3>
+        <div class="tabs" id="tabs" role="tablist"></div>
+      </div>
+      <ul class="slots" id="slots"></ul>
+    </section>
+
+    <section class="panel events" aria-label="Countdown events">
+      <div class="panel-head"><h3>Event countdowns</h3></div>
+      <form class="event-form" id="event-form">
+        <label>Event name
+          <input type="text" id="event-name" placeholder="e.g. Mid-sem exam" maxlength="40" required>
+        </label>
+        <label>Date and time
+          <input type="datetime-local" id="event-date" required>
+        </label>
+        <button type="submit">Add countdown</button>
+      </form>
+      <ul class="event-list" id="event-list"></ul>
+    </section>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
