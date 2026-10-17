@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FORGE FITNESS | Gym Admission</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">F</div>
+
+            <div>
+                <h2>FORGE</h2>
+                <span>FITNESS CLUB</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a class="nav-item active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a class="nav-item">
+                <span>◈</span>
+                Membership
+            </a>
+
+            <a class="nav-item">
+                <span>♙</span>
+                Training
+            </a>
+
+            <a class="nav-item">
+                <span>◷</span>
+                Schedule
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-profile">
+                <div class="avatar">VN</div>
+
+                <div>
+                    <strong>Vedika Naidu</strong>
+                    <small>New Member</small>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">MEMBERSHIP PORTAL</p>
+                <h1>Welcome to Forge.</h1>
+            </div>
+
+            <div class="student-details">
+
+                <div>
+                    <span>NAME</span>
+                    <strong>VEDIKA NAIDU</strong>
+                </div>
+
+                <div>
+                    <span>PRN</span>
+                    <strong>24070521274</strong>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    ● MEMBERSHIP APPLICATION
+                </span>
+
+                <h2>
+                    Train harder.<br>
+                    <em>Become stronger.</em>
+                </h2>
+
+                <p>
+                    Complete your fitness profile and choose a
+                    membership designed around your goals.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#application" class="primary-btn">
+                        Start Application
+                        <span>→</span>
+                    </a>
+
+                    <div class="hero-rating">
+                        <strong>4.9</strong>
+                        <span>★</span>
+                        <small>Member Rating</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="circle circle-one"></div>
+                <div class="circle circle-two"></div>
+
+                <div class="fitness-card">
+
+                    <div class="fitness-icon">⚡</div>
+
+                    <div>
+                        <span>YOUR POTENTIAL</span>
+                        <strong>UNLIMITED</strong>
+                    </div>
+
+                </div>
+
+                <div class="hero-number">
+                    24<span>/7</span>
+                </div>
+
+                <p>Access • Training • Results</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">♨</div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Gym Access</span>
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">⚡</div>
+
+                <div>
+                    <strong>50+</strong>
+                    <span>Equipment</span>
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">◉</div>
+
+                <div>
+                    <strong>12+</strong>
+                    <span>Expert Trainers</span>
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">★</div>
+
+                <div>
+                    <strong>4.9/5</strong>
+                    <span>Member Rating</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= APPLICATION ================= -->
+
+        <section id="application" class="application-layout">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="application-main">
+
+                <div class="section-intro">
+
+                    <div>
+
+                        <span class="section-number">01 — 04</span>
+
+                        <h2>Create Your<br>
+                            <span>Fitness Profile.</span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Your information helps us create the right
+                        membership and training experience for you.
+                    </p>
+
+                </div>
+
+
+                <!-- PROGRESS -->
+
+                <div class="progress-container">
+
+                    <div class="progress-info">
+
+                        <div>
+                            <span>APPLICATION PROGRESS</span>
+                            <strong id="progressText">
+                                0 / 13 completed
+                            </strong>
+                        </div>
+
+                        <strong id="progressPercent">0%</strong>
+
+                    </div>
+
+                    <div class="progress-line">
+                        <div id="progressBar"></div>
+                    </div>
+
+                </div>
+
+
+                <form id="gymForm" novalidate>
+
+
+                    <!-- PERSONAL INFORMATION -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="step-number">
+                                01
+                            </div>
+
+                            <div>
+                                <h3>Personal Information</h3>
+                                <p>Basic information about you.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>FULL NAME</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>◎</span>
+
+                                    <input
+                                        type="text"
+                                        id="fullName"
+                                        placeholder="Enter your full name"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>EMAIL ADDRESS</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>@</span>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="you@example.com"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>MOBILE NUMBER</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>⌕</span>
+
+                                    <input
+                                        type="text"
+                                        id="mobile"
+                                        maxlength="10"
+                                        placeholder="10 digit number"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>DATE OF BIRTH</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>▣</span>
+
+                                    <input
+                                        type="date"
+                                        id="dob"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="gender-block">
+
+                            <label>GENDER</label>
+
+                            <div class="choice-row">
+
+                                <label class="choice">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        value="Male"
+                                    >
+                                    <span>Male</span>
+                                </label>
+
+                                <label class="choice">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        value="Female"
+                                    >
+                                    <span>Female</span>
+                                </label>
+
+                                <label class="choice">
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                        value="Other"
+                                    >
+                                    <span>Other</span>
+                                </label>
+
+                            </div>
+
+                            <small
+                                class="feedback"
+                                id="genderFeedback">
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FITNESS PROFILE -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="step-number">
+                                02
+                            </div>
+
+                            <div>
+                                <h3>Fitness Profile</h3>
+                                <p>Tell us about your current fitness level.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>HEIGHT (CM)</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>↕</span>
+
+                                    <input
+                                        type="number"
+                                        id="height"
+                                        placeholder="e.g. 170"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>WEIGHT (KG)</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>⚖</span>
+
+                                    <input
+                                        type="number"
+                                        id="weight"
+                                        placeholder="e.g. 65"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group full">
+
+                                <label>PRIMARY FITNESS GOAL</label>
+
+                                <div class="input-wrapper select-wrapper">
+
+                                    <span>◆</span>
+
+                                    <select id="goal">
+
+                                        <option value="">
+                                            Select your main goal
+                                        </option>
+
+                                        <option value="Weight Loss">
+                                            Weight Loss
+                                        </option>
+
+                                        <option value="Muscle Gain">
+                                            Muscle Gain
+                                        </option>
+
+                                        <option value="Strength">
+                                            Strength & Fitness
+                                        </option>
+
+                                        <option value="General Fitness">
+                                            General Fitness
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BMI -->
+
+                        <div class="bmi-preview">
+
+                            <div>
+
+                                <span>FITNESS INDICATOR</span>
+
+                                <strong id="bmiValue">
+                                    -- 
+                                </strong>
+
+                            </div>
+
+                            <div class="bmi-bar">
+
+                                <div></div>
+
+                            </div>
+
+                            <small id="bmiText">
+                                Enter height and weight to calculate BMI
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMBERSHIP -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="step-number">
+                                03
+                            </div>
+
+                            <div>
+                                <h3>Choose Membership</h3>
+                                <p>Select the plan that fits your lifestyle.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="membership-grid">
+
+
+                            <label class="membership-card">
+
+                                <input
+                                    type="radio"
+                                    name="plan"
+                                    value="Monthly"
+                                >
+
+                                <div class="membership-content">
+
+                                    <div class="membership-top">
+
+                                        <span>FLEX</span>
+
+                                        <div class="radio-circle"></div>
+
+                                    </div>
+
+                                    <h4>Monthly</h4>
+
+                                    <div class="price">
+                                        ₹1,500
+                                        <small>/ month</small>
+                                    </div>
+
+                                    <p>
+                                        Perfect for getting started.
+                                    </p>
+
+                                    <ul>
+                                        <li>24/7 Gym Access</li>
+                                        <li>Basic Training Support</li>
+                                    </ul>
+
+                                </div>
+
+                            </label>
+
+
+                            <label class="membership-card popular">
+
+                                <div class="popular-badge">
+                                    MOST POPULAR
+                                </div>
+
+                                <input
+                                    type="radio"
+                                    name="plan"
+                                    value="Quarterly"
+                                >
+
+                                <div class="membership-content">
+
+                                    <div class="membership-top">
+
+                                        <span>PRO</span>
+
+                                        <div class="radio-circle"></div>
+
+                                    </div>
+
+                                    <h4>Quarterly</h4>
+
+                                    <div class="price">
+                                        ₹4,000
+                                        <small>/ 3 months</small>
+                                    </div>
+
+                                    <p>
+                                        For consistent progress.
+                                    </p>
+
+                                    <ul>
+                                        <li>24/7 Gym Access</li>
+                                        <li>Trainer Consultation</li>
+                                    </ul>
+
+                                </div>
+
+                            </label>
+
+
+                            <label class="membership-card">
+
+                                <input
+                                    type="radio"
+                                    name="plan"
+                                    value="Yearly"
+                                >
+
+                                <div class="membership-content">
+
+                                    <div class="membership-top">
+
+                                        <span>ELITE</span>
+
+                                        <div class="radio-circle"></div>
+
+                                    </div>
+
+                                    <h4>Yearly</h4>
+
+                                    <div class="price">
+                                        ₹12,000
+                                        <small>/ year</small>
+                                    </div>
+
+                                    <p>
+                                        Maximum value for commitment.
+                                    </p>
+
+                                    <ul>
+                                        <li>All Access</li>
+                                        <li>Premium Support</li>
+                                    </ul>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                        <small
+                            class="feedback"
+                            id="planFeedback">
+                        </small>
+
+                    </div>
+
+
+                    <!-- EMERGENCY -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="step-number">
+                                04
+                            </div>
+
+                            <div>
+                                <h3>Emergency Contact</h3>
+                                <p>Required for member safety.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+
+                                <label>CONTACT NAME</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>◎</span>
+
+                                    <input
+                                        type="text"
+                                        id="emergencyName"
+                                        placeholder="Emergency contact"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group">
+
+                                <label>CONTACT NUMBER</label>
+
+                                <div class="input-wrapper">
+
+                                    <span>⌕</span>
+
+                                    <input
+                                        type="text"
+                                        id="emergencyPhone"
+                                        maxlength="10"
+                                        placeholder="10 digit number"
+                                    >
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+
+                            <div class="input-group full">
+
+                                <label>RELATIONSHIP</label>
+
+                                <div class="input-wrapper select-wrapper">
+
+                                    <span>♧</span>
+
+                                    <select id="relation">
+
+                                        <option value="">
+                                            Select relationship
+                                        </option>
+
+                                        <option value="Parent">
+                                            Parent
+                                        </option>
+
+                                        <option value="Sibling">
+                                            Sibling
+                                        </option>
+
+                                        <option value="Friend">
+                                            Friend
+                                        </option>
+
+                                        <option value="Spouse">
+                                            Spouse
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <small class="feedback"></small>
+
+                            </div>
+
+                        </div>
+
+
+                        <label class="terms">
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                            >
+
+                            <span>
+                                I confirm that the information provided
+                                above is accurate and complete.
+                            </span>
+
+                        </label>
+
+                        <small
+                            class="feedback"
+                            id="termsFeedback">
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+
+                        <span>Complete My Membership</span>
+
+                        <strong>→</strong>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= RIGHT SUMMARY ================= -->
+
+            <aside class="application-sidebar">
+
+                <div class="summary-sticky">
+
+                    <div class="summary-header">
+
+                        <span>MEMBERSHIP PREVIEW</span>
+
+                        <div class="live-dot">
+                            ● LIVE
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-profile">
+
+                        <div class="summary-avatar">
+                            VN
+                        </div>
+
+                        <div>
+
+                            <span>APPLICANT</span>
+
+                            <h3 id="summaryName">
+                                Your Name
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-details">
+
+                        <div class="summary-row">
+
+                            <span>Fitness Goal</span>
+
+                            <strong id="summaryGoal">
+                                Not selected
+                            </strong>
+
+                        </div>
+
+                        <div class="summary-row">
+
+                            <span>Membership</span>
+
+                            <strong id="summaryPlan">
+                                Not selected
+                            </strong>
+
+                        </div>
+
+                        <div class="summary-row">
+
+                            <span>Membership Fee</span>
+
+                            <strong
+                                class="summary-price"
+                                id="summaryFee"
+                            >
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="benefit-title">
+                        YOUR BENEFITS
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <span>✓</span>
+
+                        <p>
+                            24/7 gym access
+                        </p>
+
+                    </div>
+
+                    <div class="benefit">
+
+                        <span>✓</span>
+
+                        <p>
+                            Professional equipment
+                        </p>
+
+                    </div>
+
+                    <div class="benefit">
+
+                        <span>✓</span>
+
+                        <p>
+                            Fitness guidance
+                        </p>
+
+                    </div>
+
+
+                    <div class="secure-note">
+
+                        <span>◆</span>
+
+                        <p>
+                            Your information is securely
+                            validated before submission.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- ================= SUCCESS ================= -->
+
+        <section
+            id="successBox"
+            class="success-screen"
+        >
+
+            <div class="success-circle">
+                ✓
+            </div>
+
+            <span class="success-label">
+                APPLICATION COMPLETE
+            </span>
+
+            <h2>
+                Welcome to<br>
+                <span>Forge Fitness.</span>
+            </h2>
+
+            <p>
+                Congratulations
+                <strong id="successName"></strong>.
+                Your gym membership application has been
+                successfully submitted.
+            </p>
+
+            <div class="success-details">
+
+                <div>
+                    <span>MEMBERSHIP</span>
+                    <strong id="successPlan">—</strong>
+                </div>
+
+                <div>
+                    <span>FEE</span>
+                    <strong id="successFee">—</strong>
+                </div>
+
+            </div>
+
+            <button
+                onclick="location.reload()"
+                class="new-application"
+            >
+                Create New Application
+            </button>
+
+        </section>
+
+
+        <footer>
+            EXPERIMENT 08 &nbsp;•&nbsp;
+            JAVASCRIPT FORM VALIDATION &nbsp;•&nbsp;
+            FORGE FITNESS
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
