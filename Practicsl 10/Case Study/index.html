@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Loading Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">JD</div>
+                <div>
+                    <h1>JSON Data Studio</h1>
+                    <p>Web Technology Laboratory Experiment</p>
+                </div>
+            </div>
+
+            <div class="student-info">
+                <span class="student-label">STUDENT DETAILS</span>
+                <strong>NAME: VEDIKA NAIDU</strong>
+                <strong>PRN: 24070521274</strong>
+            </div>
+        </header>
+
+        <!-- Welcome section -->
+        <section class="welcome">
+            <div>
+                <span class="eyebrow">DATA MANAGEMENT / EXPERIMENT 01</span>
+                <h2>JSON Data Loading Dashboard</h2>
+                <p>
+                    Fetch, explore, search and display JSON records
+                    dynamically using JavaScript and jQuery.
+                </p>
+            </div>
+            <div class="welcome-icon">{"{}"}</div>
+        </section>
+
+        <!-- Loading controls -->
+        <section class="controls panel">
+            <div>
+                <h3>Load JSON Data</h3>
+                <p>Choose a method to retrieve records from the API.</p>
+            </div>
+
+            <div class="button-group">
+                <button id="fetchBtn" class="btn btn-primary">
+                    ↻ Load with fetch()
+                </button>
+                <button id="jqueryBtn" class="btn btn-secondary">
+                    $ Load with jQuery
+                </button>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon purple">▤</div>
+                <p>Total Records</p>
+                <h3 id="totalRecords">0</h3>
+                <span>Records retrieved</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <p>Data Status</p>
+                <h3 id="dataStatus">Ready</h3>
+                <span id="statusMessage">Waiting to load data</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">⌕</div>
+                <p>Filtered Results</p>
+                <h3 id="filteredRecords">0</h3>
+                <span>Matching records</span>
+            </div>
+        </section>
+
+        <!-- Data table -->
+        <section class="panel table-panel">
+            <div class="table-heading">
+                <div>
+                    <h3>JSON Records</h3>
+                    <p>Live data rendered into an HTML table</p>
+                </div>
+                <span class="api-badge">● API CONNECTED</span>
+            </div>
+
+            <div class="table-toolbar">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search name, email or city..."
+                        aria-label="Search JSON records"
+                    >
+                </div>
+
+                <span id="resultLabel">No records loaded</span>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading JSON records...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden"
+                 role="alert"></div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>FULL NAME</th>
+                            <th>USERNAME</th>
+                            <th>EMAIL ADDRESS</th>
+                            <th>CITY</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="6" class="empty-state">
+                                <div class="empty-icon">▤</div>
+                                <strong>No data available yet</strong>
+                                <p>
+                                    Click either loading button above
+                                    to fetch JSON records.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-footer">
+                <span>Source: JSONPlaceholder REST API</span>
+                <span id="methodLabel">Method: Not selected</span>
+            </div>
+        </section>
+
+        <!-- Experiment information -->
+        <section class="info-grid">
+            <div class="panel info-card">
+                <span class="info-number">01</span>
+                <h3>JavaScript fetch()</h3>
+                <p>
+                    Retrieves JSON data using a Promise-based API
+                    and converts the response using response.json().
+                </p>
+            </div>
+
+            <div class="panel info-card">
+                <span class="info-number">02</span>
+                <h3>jQuery $.getJSON()</h3>
+                <p>
+                    Uses jQuery to request JSON data and processes
+                    the returned records with a callback.
+                </p>
+            </div>
+
+            <div class="panel info-card">
+                <span class="info-number">03</span>
+                <h3>Dynamic Rendering</h3>
+                <p>
+                    JavaScript creates table rows from the retrieved
+                    data and updates the dashboard statistics.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <span>JSON Data Studio</span>
+            <span>Designed for Web Technology Practical</span>
+            <span>VEDIKA NAIDU · 24070521274</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
