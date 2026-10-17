@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+
+/* Student Details */
+
+.student-details {
+    width: 90%;
+    max-width: 1000px;
+    margin: 16px auto 10px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 13px;
+    color: #64748b;
+    font-weight: normal;
+}
+
+
+/* Header */
+
+header {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #0f766e,
+        #0d9488
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 25px rgba(15, 118, 110, 0.20);
+}
+
+
+.practical-tag {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+
+/* Main */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* To-Do Card */
+
+.todo-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 22px rgba(15, 23, 42, 0.07);
+
+    border: 1px solid #e2e8f0;
+
+    margin-bottom: 20px;
+}
+
+
+/* Heading */
+
+.todo-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.todo-heading h2 {
+    color: #115e59;
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+
+.todo-heading p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* Task Counter */
+
+.task-count {
+    min-width: 75px;
+
+    text-align: center;
+
+    padding: 10px;
+
+    background: #ecfdf5;
+
+    border-radius: 12px;
+
+    color: #0f766e;
+}
+
+
+.task-count span {
+    display: block;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.task-count small {
+    font-size: 11px;
+}
+
+
+/* Add Task */
+
+.add-task {
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+}
+
+
+.add-task input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: #f8fafc;
+}
+
+
+.add-task input:focus {
+    border-color: #0d9488;
+
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.10);
+}
+
+
+.add-task button {
+    border: none;
+
+    padding: 0 22px;
+
+    border-radius: 10px;
+
+    background: #0f766e;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.add-task button:hover {
+    background: #115e59;
+}
+
+
+/* List Heading */
+
+.list-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    margin-bottom: 12px;
+}
+
+
+.list-heading h3 {
+    font-size: 16px;
+
+    color: #334155;
+}
+
+
+.list-heading span {
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+/* Task List */
+
+#taskList {
+    list-style: none;
+}
+
+
+/* Individual Task */
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 11px;
+
+    transition: 0.2s;
+}
+
+
+.task-item:hover {
+    border-color: #99f6e4;
+
+    background: #f0fdfa;
+}
+
+
+/* Task Text */
+
+.task-text {
+    flex: 1;
+
+    font-size: 14px;
+
+    color: #334155;
+
+    cursor: pointer;
+}
+
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+
+    color: #94a3b8;
+}
+
+
+/* Buttons */
+
+.task-actions {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.edit-btn,
+.delete-btn {
+    border: none;
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.edit-btn {
+    background: #e0f2fe;
+
+    color: #0369a1;
+}
+
+
+.edit-btn:hover {
+    background: #bae6fd;
+}
+
+
+.delete-btn {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+
+/* Empty Message */
+
+.empty-message {
+    text-align: center;
+
+    padding: 35px 15px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* Information Section */
+
+.info-section {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.info-box {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 13px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+
+.info-box > span {
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #ccfbf1;
+
+    color: #0f766e;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+.info-box h3 {
+    font-size: 14px;
+
+    margin-bottom: 4px;
+
+    color: #334155;
+}
+
+
+.info-box p {
+    font-size: 11px;
+
+    color: #64748b;
+
+    line-height: 1.4;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .student-details {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    header h1 {
+        font-size: 27px;
+    }
+
+
+    .add-task {
+        flex-direction: column;
+    }
+
+
+    .add-task button {
+        padding: 12px;
+    }
+
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    .task-item {
+        align-items: flex-start;
+    }
+}
