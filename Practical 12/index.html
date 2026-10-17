@@ -1,0 +1,277 @@
+<!--
+  NAME: VEDIKA NAIDU
+  PRN : 24070521274
+  Experiment 12: Interactive real-time web app (JavaScript + jQuery: DOM, events, storage, AJAX)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Pulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* NAME: VEDIKA NAIDU | PRN: 24070521274 */
+    :root {
+      --bg: #eef3f2; --card: #ffffff; --ink: #12231f; --muted: #647873; --line: #dbe5e2;
+      --side: #0b3b38; --side-2: #145550; --accent: #0f9b86; --accent-d: #0b7a6a;
+      --amber: #f59e0b; --danger: #e11d48;
+      --display: "Outfit", "Segoe UI", system-ui, sans-serif;
+      --body: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); font-variant-numeric: tabular-nums; }
+    button, input, select { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .app { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+
+    /* Sidebar */
+    .sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 28px; padding: 24px 18px; background: var(--side); color: #e6f4f1; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand b { font: 700 1.15rem var(--display); display: block; }
+    .brand small, .student small { color: #8fc1ba; display: block; font-size: .8rem; }
+    .logo { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font: 700 1rem var(--display); background: var(--amber); color: #3b2800; }
+    .nav { display: grid; gap: 6px; }
+    .nav-btn { display: flex; justify-content: space-between; align-items: center; padding: 11px 14px; border: 0; border-radius: 12px; text-align: left; background: transparent; color: #b9dad5; font-weight: 600; }
+    .nav-btn:hover { background: var(--side-2); color: #fff; }
+    .nav-btn.active { background: #fff; color: var(--side); }
+    .badge { min-width: 24px; padding: 2px 8px; border-radius: 999px; background: var(--amber); color: #3b2800; font-size: .78rem; text-align: center; }
+    .student { margin-top: auto; display: flex; gap: 12px; align-items: center; padding: 12px; border-radius: 14px; background: var(--side-2); }
+    .student b { font-size: .92rem; }
+    .avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--side); font: 700 .85rem var(--display); }
+
+    /* Content */
+    .content { padding: 28px clamp(16px, 3vw, 36px) 48px; min-width: 0; }
+    .head { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; justify-content: space-between; margin-bottom: 22px; }
+    .head h1 { margin: 0; font: 700 2rem/1.1 var(--display); }
+    .head p { margin: 6px 0 0; color: var(--muted); }
+    .clock { text-align: right; }
+    .clock b { font: 600 1.7rem/1 var(--display); display: block; }
+    .clock small { color: var(--muted); }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); }
+    .weather { grid-column: span 8; }
+    .progress { grid-column: span 4; }
+    .log { grid-column: span 12; }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; min-width: 0; }
+    .card h2 { margin: 0; font: 600 1.15rem var(--display); }
+    .card h2 small { color: var(--muted); font: 600 .85rem var(--body); margin-left: 8px; }
+    .card-top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+
+    input, select { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: #f8fbfa; min-width: 0; }
+    input:focus, select:focus { border-color: var(--accent); background: #fff; }
+    .inline-form { display: flex; gap: 8px; }
+    button[type="submit"] { padding: 10px 16px; border: 0; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 700; }
+    button[type="submit"]:hover { background: var(--accent-d); }
+    button[type="submit"]:disabled { opacity: .6; cursor: wait; }
+    .link-btn { background: none; border: 0; color: var(--accent-d); font-weight: 700; padding: 4px 0; }
+    .link-btn:hover { text-decoration: underline; }
+    .hint { color: var(--muted); font-size: .85rem; margin: 14px 0 0; }
+
+    /* Weather + city search feedback */
+    .city-msg { min-height: 22px; margin: 0 0 8px; font-size: .9rem; font-weight: 600; color: var(--accent-d); }
+    .city-msg.err { color: var(--danger); }
+    .quick { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .quick small { color: var(--muted); margin-right: 2px; }
+    .quick button { padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: .85rem; font-weight: 600; }
+    .quick button:hover { border-color: var(--accent); color: var(--accent-d); }
+    .quick button.current { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .alts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+    .alts:empty { display: none; }
+    .alts small { color: var(--muted); }
+    .alts button { padding: 5px 12px; border-radius: 999px; border: 1px dashed var(--accent); background: #f1f7f5; color: var(--accent-d); font-size: .85rem; font-weight: 600; }
+
+    .wx-main { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; padding: 14px 0 18px; }
+    .wx-temp { font: 700 4.4rem/1 var(--display); color: var(--accent-d); }
+    .wx-temp sup { font-size: 1.6rem; vertical-align: top; position: relative; top: 8px; }
+    .wx-main h3 { margin: 0; font: 600 1.4rem var(--display); }
+    .wx-main p { margin: 4px 0 0; color: var(--muted); }
+    .wx-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .wx-stats div { padding: 12px 14px; border-radius: 14px; background: #f1f7f5; }
+    .wx-stats small { display: block; color: var(--muted); font-size: .8rem; }
+    .wx-stats b { font-size: 1.05rem; }
+
+    /* Progress */
+    .big { margin: 18px 0 14px; font: 700 2.6rem/1 var(--display); }
+    .big span { font: 600 1rem var(--body); color: var(--muted); margin-left: 6px; }
+    .bar { height: 12px; border-radius: 999px; background: #e3ece9; overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--amber)); transition: width .4s; }
+
+    /* Log */
+    #log-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    #log-list li { display: flex; gap: 12px; padding: 10px 14px; border-radius: 12px; background: #f1f7f5; font-size: .92rem; }
+    #log-list time { color: var(--muted); flex: none; }
+    .empty { color: var(--muted); margin: 6px 0; }
+
+    /* Tasks */
+    .task-form { display: grid; grid-template-columns: 1fr 130px auto; gap: 10px; margin-bottom: 16px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+    .filters .link-btn { margin-left: auto; }
+    .chip { padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--muted); font-weight: 600; }
+    .chip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .task { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); border-left: 5px solid var(--amber); background: #fbfdfc; }
+    .task.low { border-left-color: #7dd3b8; }
+    .task.high { border-left-color: var(--danger); }
+    .task input { width: 20px; height: 20px; accent-color: var(--accent); flex: none; }
+    .task span { flex: 1; overflow-wrap: anywhere; }
+    .task.done span { text-decoration: line-through; color: var(--muted); }
+    .task .del { border: 0; background: none; color: var(--muted); font-size: 1.3rem; line-height: 1; }
+    .task .del:hover { color: var(--danger); }
+
+    /* Feed */
+    .status { color: var(--muted); padding: 8px 0; }
+    .status button { margin-left: 8px; padding: 6px 12px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; }
+    .feed { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .post { padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: #fbfdfc; display: flex; flex-direction: column; gap: 8px; }
+    .post h4 { margin: 0; font: 600 1rem/1.3 var(--display); text-transform: capitalize; }
+    .post p { margin: 0; color: var(--muted); font-size: .9rem; flex: 1; }
+    .post .star { align-self: flex-start; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 5px 12px; font-size: .82rem; font-weight: 700; color: var(--muted); }
+    .post .star.on { background: var(--amber); border-color: var(--amber); color: #3b2800; }
+
+    /* Toast */
+    .toast { position: fixed; right: 18px; bottom: 18px; z-index: 20; max-width: calc(100vw - 36px); padding: 12px 18px; border-radius: 12px; background: var(--ink); color: #fff; font-weight: 600; opacity: 0; transform: translateY(10px); pointer-events: none; transition: .25s; }
+    .toast.show { opacity: 1; transform: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 14px; padding: 14px 16px; }
+      .nav { grid-auto-flow: column; order: 3; width: 100%; overflow-x: auto; }
+      .nav-btn { white-space: nowrap; }
+      .student { margin: 0 0 0 auto; padding: 8px 12px; }
+      .weather, .progress, .log { grid-column: span 12; }
+    }
+    @media (max-width: 560px) {
+      .task-form { grid-template-columns: 1fr; }
+      .wx-stats { grid-template-columns: 1fr; }
+      .wx-temp { font-size: 3.6rem; }
+      .clock { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) { .bar i, .toast { transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">CP</span>
+        <div><b>Campus Pulse</b><small>Live student hub</small></div>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-view="overview">Overview</button>
+        <button class="nav-btn" data-view="tasks">Tasks <span class="badge" id="nav-count">0</span></button>
+        <button class="nav-btn" data-view="feed">Live feed</button>
+      </nav>
+      <div class="student">
+        <span class="avatar">VN</span>
+        <div><b>VEDIKA NAIDU</b><small>PRN 24070521274</small></div>
+      </div>
+    </aside>
+
+    <div class="content">
+      <header class="head">
+        <div><h1 id="view-title">Overview</h1><p id="greeting"></p></div>
+        <div class="clock"><b id="clock">00:00:00</b><small id="date"></small></div>
+      </header>
+
+      <!-- OVERVIEW -->
+      <section class="view active" id="view-overview">
+        <div class="grid">
+          <article class="card weather">
+            <div class="card-top">
+              <h2>Live weather</h2>
+              <form id="city-form" class="inline-form">
+                <input type="text" id="city-input" placeholder="Search any city" autocomplete="off" required>
+                <button type="submit" id="city-btn">Search</button>
+              </form>
+            </div>
+            <p class="city-msg" id="city-msg" role="status"></p>
+            <div class="alts" id="city-alts"></div>
+            <div class="quick" id="quick">
+              <small>Quick cities:</small>
+              <button type="button" data-name="Mumbai, India" data-lat="19.076" data-lon="72.8777">Mumbai</button>
+              <button type="button" data-name="Delhi, India" data-lat="28.6139" data-lon="77.209">Delhi</button>
+              <button type="button" data-name="Nagpur, India" data-lat="21.1458" data-lon="79.0882">Nagpur</button>
+              <button type="button" data-name="Bengaluru, India" data-lat="12.9716" data-lon="77.5946">Bengaluru</button>
+              <button type="button" data-name="London, UK" data-lat="51.5072" data-lon="-0.1276">London</button>
+              <button type="button" data-name="New York, USA" data-lat="40.7128" data-lon="-74.006">New York</button>
+            </div>
+            <div class="wx-main">
+              <div class="wx-temp"><span id="wx-temp">--</span><sup>°C</sup></div>
+              <div><h3 id="wx-city">Loading...</h3><p id="wx-desc">Fetching data</p></div>
+            </div>
+            <div class="wx-stats">
+              <div><small>Humidity</small><b id="wx-hum">--</b></div>
+              <div><small>Wind</small><b id="wx-wind">--</b></div>
+              <div><small>Updated</small><b id="wx-time">--</b></div>
+            </div>
+            <p class="hint" id="wx-note">Refreshes automatically every 60 seconds.</p>
+          </article>
+
+          <article class="card progress">
+            <h2>Task progress</h2>
+            <div class="big"><b id="p-done">0</b><span>/ <span id="p-total">0</span> done</span></div>
+            <div class="bar"><i id="p-bar"></i></div>
+            <p class="hint" id="p-text">Add your first task in the Tasks view.</p>
+            <button class="link-btn" data-go="tasks">Open tasks</button>
+          </article>
+
+          <article class="card log">
+            <div class="card-top"><h2>Activity log</h2><button class="link-btn" id="clear-log">Clear</button></div>
+            <ul id="log-list"></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- TASKS -->
+      <section class="view" id="view-tasks">
+        <article class="card">
+          <form id="task-form" class="task-form">
+            <input type="text" id="task-input" placeholder="What needs to be done?" maxlength="80" required>
+            <select id="task-pri">
+              <option value="low">Low</option>
+              <option value="med" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+            <button type="submit">Add task</button>
+          </form>
+          <div class="filters">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="active">Active</button>
+            <button class="chip" data-filter="done">Done</button>
+            <button class="link-btn" id="clear-done">Clear completed</button>
+          </div>
+          <ul id="task-list" class="tasks"></ul>
+        </article>
+      </section>
+
+      <!-- FEED -->
+      <section class="view" id="view-feed">
+        <article class="card">
+          <div class="card-top">
+            <h2>Campus feed <small id="saved-count"></small></h2>
+            <input type="search" id="feed-search" placeholder="Filter posts as you type">
+          </div>
+          <div id="feed-status" class="status">Loading posts...</div>
+          <div id="feed-list" class="feed"></div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
